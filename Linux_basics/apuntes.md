@@ -76,8 +76,6 @@ Comandos básicos de la terminal.
         Actualizar la lista de paquetes encontrados
     - sudo apt upgrade
         actualizacion de los paquetes instalados en la computadora    
-    - nano
-        Ver los archivos en la terminal para editarlos o leerlos
     - man
         Hace referencia a un manual, con ello tenemos las instrucciones de como usar el comando.
         Nos muestra la descripcion, en que momento lo debemos usar, como utilizarlo.
@@ -92,11 +90,31 @@ Comandos básicos de la terminal.
     - cd    
         change directory, cabiar de un directorio a otro (ver apartado de sistema de archivos)
     - ls
-        listar los archivos de la ruta donde estamos parados, con ello vemos los dicumentos que tenemosen la carpeta donde estamos
+        listar los archivos en una forma corta (list short) de la ruta donde estamos parados, con ello vemos los documentos que tenemos en la carpeta donde estamos
+    - ll
+        listar los archivos en una forma larga (list large) de la ruta donde estamos parados, con ello vemos los documentos que tenemos en la carpeta donde estamos
+        
     - history
         historial de comandos ocupados en la sesión de la terminal
     - clear history
         borra los comandos guardos en el historial de la terminal
+    - mkdir
+        crea un nuevo directorio, make directory
+    - touch
+        crea un archivo, nombre del archivo . extencion
+    - nano
+        Ver los archivos en la terminal para editarlos o leerlos. Tambien podemos crear un archivo con nano al igual que con touch
+            nano nombreDelArchivo.extensión
+    - vi
+        Es otro visualizador de archivos
+    - cat 
+        Tiene varias funciones, una de las mas utilizadas es para ver el contenido del archivo en la consola
+    - mv
+        Mover y renombrar archivos
+    - cp 
+        copiar un archivo 
+
+    
 
     
     Como funcionan los sitemas de archivos
@@ -128,6 +146,80 @@ Comandos básicos de la terminal.
                     ls  -a
                         Nos permite ver los permisos del archivo
 
+                Como crear un directorio
+                    Con el comando mkdir espacio y el nombre del directorio a crear.
+                        mkdir newFolder
+                    
+                    Podemos crear una carpeta nueva dentro de newFolder con la ruta
+                        mkdir newFolder/docs
+                    
+                    Con ello estamos creando la carpera docs en la carpeta new folder, tambien podemos entrar en la carpeta de newFolder y crear la carpeta docs
+                
+                Como crear un archivo
+                    Con el comando touch  creamos los archivos, indicando el nombre del archivo . la extensión del mismo
+
+                        touch holakoders.txt
+                    De igual manera que mkdir podemos crear archivos  indicando la ruta en la queremos posicionar el archivo
+
+                    Tambien lo podemos crear con nano
+
+                        nano adiosKoders.txt
+                
+                Leer y editar un archivo
+                    Podemos utilizar diferente herramientas disponibles para abrir y editar un archivo. Una de ellas es nano, indicando nano espacio nombre del archivo con la extension del mismo
+                        ejemplo
+                            nano holakoders.txt
+                    para guardar el archivo modificado denbemos pulsar ctrl + w o ne su defecto ctrl + x y aceptar o denegar los cambios realizados
+                
+                Ver el contenido del archivo en consola
+                    Para visualizar el contenido del archivo en la terminal
+                    cat nombre del archvio
+
+                    Para ver cuantas lineas tiene un archivo se utiliza
+                        cal -n nombre del archivo.extension
+                    
+                    Para concatenar dos o más archivos con el comando cat se realiza de la siguiente manera
+                        cat holakoders.txt adios.txt > archivos.txt
+                    
+                    con ello genera un nuevo archivo que fuciona el contenido de dos archivos y lo entrega en un archivo de salida, en este caso, con el nombre archivos.txt
+
+                Mover un archivo de una ubicación a otra
+                    con el comando mv nos permite mover y renombrar archivos.
+                        ejemplo
+
+                            mv holakoders.txt hola/
+                        
+                        Esto nos movera el archivo holakoders.txt a la carpeta hola
+                    
+                    Si queremos mover un archivo a un directorio mas afuera de la ruta donde me encuentro tenemos que indicar la ruta absoluta (es decir la ruta completa) del directorio  donde queremos posicionar el archivo
+                    Tambien podemos hacerlo de la siguiente manera
+                        mv saludos.txt ../
+                    Esto hara que el archivo salga a el folder superior 
+
+                Renombrar un archvio
+                    Con el comando mv tambien podemos renombrar el archivo por ejemplo
+                        mv archivoss.txt saludos
+                    
+                Copiar un archivo
+                    Con el comando cp pedemos copiar un archivo sin modificar el archivo actual
+                        ejemplo
+                            cp saludos.txt saludocopia.txt
+                    Este comando nos hará una copia del archivo en la misma ruta o directorio
+
+                    Si queremos cambiar de carpeta destino indicamos lo siguiente
+                        cp saludos.txt saludo/
+
+                        Esto nos copiara el archivo saludos.txt a la carpeta saludo
+
+                    tambien podemos salir un directorio arriba para copiar el  archivo con el comando
+                        cp adioskoder.txt ../
+
+                    para copiar una carpeta tenemos que hacer un proceso recusivo por que es un folder y tenemos que mover todos los archivos que tiene almacenados.
+
+                        cp -r hola ../
+                    
+                    con el flat -r estamos indicando que es recursivo este proceso y asi podemos copiar la carperta hola un directorio arriba
+                    
 
 
 
